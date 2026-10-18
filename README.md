@@ -5,7 +5,7 @@ A responsive, accessible task planner for campus life, built with **vanilla HTML
 | | |
 |---|---|
 | **Live site (GitHub Pages)** | https://virginie2026.github.io/campus-life-planner/ |
-| **Demo video (unlisted)** | TODO: paste your video link here |
+| **Demo video (unlisted)** | https://www.loom.com/share/5071a12de2c54ed887e12ade7e57790f |
 | **Repository** | https://github.com/Virginie2026/campus-life-planner |
 | **Chosen theme** | Campus Life Planner |
 | **Author** | Sia Virginie Millimouno, African Leadership University |
