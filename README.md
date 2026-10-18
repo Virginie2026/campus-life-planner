@@ -336,6 +336,7 @@ Do not open `index.html` by double-click: browsers block ES modules on `file://`
 ---
 
 ## Run the tests
+Online: https://virginie2026.github.io/campus-life-planner/tests.html
 
 Open `tests.html` with Live Server. It imports `validateField` from `scripts/validators.js` and runs 13 checks. A correct build shows **13 lines starting with `PASS`**.
 
