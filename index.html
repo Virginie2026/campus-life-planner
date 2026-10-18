@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Life Planner</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="Preconnect" href="https://fonts.googleapis.com">
+    <link rel="Preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="Preconnect" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&display=swap" rel="stylessheet">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container topbar">
+            <a class="brand" href="#dashboard">Campus Life Planner</a>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul class="container nav-list">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#form-section">Add</a></li>
+                <li><a href="#tasks">Tasks</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="container">
+
+        <section id="dashboard" class="card-section">
+            <h2 class="section-title">Dashboard</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total tasks</h3>
+                    <p id="total-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total time</h3>
+                    <p id="total-duration">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Top tag</h3>
+                    <p id="top-tag">-</p>
+                </div>
+            </div>
+
+            <h3>Last 7 days</h3>
+            <div id="trend-chart" class="trend" role="img" aria-label="Minutes per day, last 7 days"></div>
+
+            <h3>Weekly cap</h3>
+            <label for="cap-input">Cap (minutes)</label>
+            <input id="cap-input" type="text" inputmode="numeric">
+            <p id="cap-message" aria-live="polite"></p>
+        </section>
+
+        <section id="form-section" class="form-section">
+            <h2 class="section-title">Add an Activity</h2>
+            <form id="task-form" novalidate>
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+                        <label for="title">Activity title</label>
+                        <input type="text" id="title" placeholder="Frontend web project" aria-describedby="title-error">
+                        <p id="title-error" class="error" role="alert"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Duration (minutes)</label>
+                        <input type="text" id="duration" inputmode="decimal" aria-describedby="duration-error">
+                        <p id="duration-error" class="error" role="alert"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tag">Tag</label>
+                        <input type="text" id="tag" list="tag-list" aria-describedby="tag-error">
+                        <datalist id="tag-list">
+                            <option value="Course">
+                            <option value="Project">
+                            <option value="Assignment">
+                            <option value="Exam">
+                            <option value="Sports">
+                            <option value="Routine">
+                        </datalist>
+                        <p id="tag-error" class="error" role="alert"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startTime">Start time (HH:MM)</label>
+                        <input type="text" id="startTime" placeholder="14:30" aria-describedby="startTime-error">
+                        <p id="startTime-error" class="error" role="alert"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dueDate">Due date (YYYY-MM-DD)</label>
+                        <input type="text" id="dueDate" placeholder="2026-10-30" aria-describedby="dueDate-error">
+                        <p id="dueDate-error" class="error" role="alert"></p>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn-primary">Save task</button>
+                <p id="form-status" role="status"></p>
+            </form>
+        </section>
+
+        <section id="tasks" class="card-section">
+            <h2 class="section-title">Activity List</h2>
+
+            <label for="search">Search (regex)</label>
+            <input id="search" type="search" placeholder="e.g. ^Exam">
+            <label><input id="case-toggle" type="checkbox" checked> Ignore case</label>
+
+            <label for="sort">Sort by</label>
+            <select id="sort">
+                <option value="date-asc">Date &uarr;</option>
+                <option value="date-desc">Date &darr;</option>
+                <option value="title-asc">Title A&rarr;Z</option>
+                <option value="title-desc">Title Z&rarr;A</option>
+                <option value="duration-asc">Duration &uarr;</option>
+                <option value="duration-desc">Duration &darr;</option>
+            </select>
+            <p id="search-status" role="status"></p>
+
+            <div class="table-wrapper">
+                <table>
+                    <caption class="sr-only">List of activities</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Tag</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">Due date</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="settings" class="card-section">
+            <h2 class="section-title">Settings</h2>
+            <label for="unit-select">Show duration in</label>
+            <select id="unit-select">
+                <option value="min">Minutes</option>
+                <option value="h">Hours</option>
+            </select>
+
+            <button id="export-btn" type="button" class="btn-primary">Export JSON</button>
+            <label for="import-file">Import JSON</label>
+            <input id="import-file" type="file" accept="application/json">
+            <p id="import-status" role="status"></p>
+        </section>
+
+        <section id="about" class="card-section">
+            <h2 class="section-title">About</h2>
+            <p>Campus Life Planner helps students organise tasks and events, with tags, durations and regex search.</p>
+            <p>Contact: <a href="https://github.com/Virginie2026">GitHub</a> &middot; <a
+                    href="mailto:s.millimoun@alustudent.com">s.millimoun@alustudent.com</a></p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Sia Virginie Millimouno -African Leadership University.</p>
+    </footer>
+
+    <script type="module" src="scripts/app.js"></script>
+</body>
+
+</html>

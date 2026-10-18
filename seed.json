@@ -1,0 +1,15 @@
+[
+    {"id":"rec_0001","title":"study for Math exam","duration":90,"tag":"Exam","startTime":"09:00","dueDate":"2026-10-15","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"},
+    {"id":"rec_0002","title":"Frontend web project","duration":180,"tag":"Project","startTime":"14:30","dueDate":"2026-10-16","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"},
+    {"id":"rec_0003","title":"Quick stretch","duration":0.5,"tag":"Routine","startTime":"07:00","dueDate":"2026-12-31","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"},
+    {"id":"rec_0004","title":"Final year thesis writing","duration":9999,"tag":"Assignment","startTime":"18:45","dueDate":"2026-10-17","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"},
+    {"id":"rec_0005","title":"Leap day party","duration":120,"tag":"Campus-Event","startTime":"18:45","dueDate":"2028-02-29","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"},
+    {"id":"rec_0006","title":"Football practice 17:30 pitch","duration":60,"tag":"Sports","startTime":"17:30","dueDate":"2028-02-29","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"},
+    {"id":"rec_0007","title":"New year planning","duration":45.75,"tag":"Course","startTime":"00:00","dueDate":"2026-10-14","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"},
+    {"id":"rec_0008","title":"Group-work: Revision & Notes <important>","duration":75,"tag":"Course","startTime":"23:59","dueDate":"2026-10-13","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"},
+    {"id":"rec_0009","title":"Prepare the presentation slides for the leadership class before Friday morning","duration":30,"tag":"Study","startTime":"12:15","dueDate":"2026-10-12","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"},
+    {"id":"rec_0010","title":"Lunch with mentor","duration":25.25,"tag":"Campus Event","startTime":"10:10","dueDate":"2026-10-11","createdAt":"2026-10-01T08:00:00.000Z","updatedAt":"2026-10-01T08:00:00.000Z"}
+]
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tests</title>
+    </head>
+    <body>
+        <h1>Validator tests</h1>
+        <ul id="results"></ul>
+
+        <script type="module">
+            import { validateField } from './scripts/validators.js';
+
+            function test (name, field, value, shouldBeValid) {
+                const ok = (validateField(field, value) === '') === shouldBeValid;
+                const li = document.createElement('li');
+                li.textContent = (ok ? 'PASS: ' : 'FAIL: ') + name;
+                document.getElementById('results').appendChild(li);
+            }
+
+             test('good title','title', 'Study for exam', true);
+             test('Leading space','title', ' Study', false);
+             test('double space','title', 'Study  now', false);
+             test('repeated word','title', 'Study study now', false);
+             test('good duration','duration', '45.5', true);
+             test('zero duration','duration', '0', false);
+             test('3 decimals','duration', '1.234', false);
+             test('good tag','tag', 'Group-work', true);
+             test('tag with number','tag', 'Exam2', false);
+             test('good time','startTime', '14:30', true);
+            test('bad time','startTime', '25:00', false);
+            test('good date','dueDate', '2026-10-30', true);
+            test('fake date','dueDate', '2026-02-31', false); 
+        </script>
+    </body>
+</html>
